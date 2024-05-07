@@ -5,7 +5,7 @@ import datetime
 import xl
 
 
-def db_create():
+def db_create(): # Создание базы данных
     connection = sqlite3.connect("my_database.db")
     cursor = connection.cursor()
 
@@ -23,12 +23,12 @@ def db_create():
     connection.close()
 
 
-def repeater(interval, function):
+def repeater(interval, function): #Таймер
     Timer(interval, repeater, [interval, function]).start()
     function()
 
 
-def weather():
+def weather(): #Запрос к API
     access_key = '92633492-fa21-4cb4-9b9f-504feffab676'
 
     headers = {
